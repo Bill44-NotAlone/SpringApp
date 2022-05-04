@@ -9,28 +9,21 @@
         <context:property-placeholder location="classpath:musicPlayer.properties"/>
         <bean id="rockMusic"
               class="ru.springapp.springcore.RockMusic"
-              scope="prototype">
+              scope="prototype"
+              factory-method="getRockMusic">
         </bean>
         <bean id="hardBassMusic"
               class="ru.springapp.springcore.HardBass">
         </bean>
         <bean id="classicalMusic"
-              class="ru.springapp.springcore.ClassicalMusic">
+              class="ru.springapp.springcore.ClassicalMusic"
+              factory-method="getClassicalMusic">
         </bean>
         <bean id="musicPlayer"
               class="ru.springapp.springcore.MusicPlayer"
               init-method="InitMetod"
               scope="prototype"
               destroy-method="Destroy">
-                <property name="music" ref="rockMusic"/>
-                <property name="name" value="${musicPlayer.name}"/>
-                <property name="volume" value="${musicPlayer.volume}"/>
-                <property name="musicList">
-                        <list>
-                                <ref bean="rockMusic"/>
-                                <ref bean="classicalMusic"/>
-                                <ref bean="hardBassMusic"/>
-                        </list>
-                </property>
+                <property name="music" ref="classicalMusic"/>
         </bean>
 </beans>
