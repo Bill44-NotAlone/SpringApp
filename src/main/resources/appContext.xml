@@ -19,7 +19,9 @@
         </bean>
         <bean id="musicPlayer"
               class="ru.springapp.springcore.MusicPlayer"
-              scope="prototype">
+              init-method="InitMetod"
+              scope="prototype"
+              destroy-method="Destroy">
                 <property name="music" ref="rockMusic"/>
                 <property name="name" value="${musicPlayer.name}"/>
                 <property name="volume" value="${musicPlayer.volume}"/>

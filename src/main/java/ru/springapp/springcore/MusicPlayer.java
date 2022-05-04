@@ -9,6 +9,10 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
+    public MusicPlayer(){
+        System.out.println("Phase 1.");
+    }
+
     public void setMusicList(List<Music> musicList) {
         this.musicList = musicList;
     }
@@ -46,5 +50,14 @@ public class MusicPlayer {
         if(music != null)
             return music.getSong();
         return "";
+    }
+
+    public void InitMetod(){
+        System.out.println("Phase 2.");
+    }
+
+    //Не работает с prototype
+    public void Destroy(){
+        System.out.println("Phase 3.");
     }
 }
