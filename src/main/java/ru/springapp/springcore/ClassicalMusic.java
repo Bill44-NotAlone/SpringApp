@@ -8,10 +8,4 @@ public class ClassicalMusic implements Music {
     public String getSong() {
         return "О фартуна.";
     }
-
-    private ClassicalMusic(){}
-
-    public static ClassicalMusic getClassicalMusic(){
-        return new ClassicalMusic();
-    }
 }
